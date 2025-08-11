@@ -62,6 +62,11 @@ public class EditActivity extends AppCompatActivity {
         System.out.println("Effect button clicked!");
     }
 
+    public void btnPopClicked(View v) {
+        System.out.println("Pop button clicked!");
+        finish();
+    }
+
 }
 
 

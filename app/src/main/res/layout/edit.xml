@@ -8,12 +8,26 @@
     android:background="#262626"
     tools:context=".activities.EditActivity">
 
+    <ImageButton
+        android:id="@+id/btn_pop"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/arrow_back"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/selectedImage"
+        app:layout_constraintStart_toStartOf="@id/selectedImage"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:onClick="btnPopClicked" />
+
     <!-- Selected image -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/selectedImage"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="TODO"
         android:src="@drawable/image"
         android:adjustViewBounds="true"
@@ -44,7 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@drawable/btn_mod"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 app:chainUseRtl="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"

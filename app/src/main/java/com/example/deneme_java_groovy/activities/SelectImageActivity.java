@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.deneme_java_groovy.Constants;
 import com.example.deneme_java_groovy.R;
 
 import static com.example.deneme_java_groovy.Constants.IMAGE_SELECT_CODE;
@@ -48,7 +49,7 @@ public class SelectImageActivity extends AppCompatActivity {
         if (requestCode == IMAGE_SELECT_CODE && data != null) {
             Uri selectedImageUri = data.getData();
 
-            Intent editImageActivityIntent = new Intent(getApplicationContext(), EditActivity.class);
+            Intent editImageActivityIntent = new Intent(Constants.EDIT_IMAGE_INTENT);
             editImageActivityIntent.setData(selectedImageUri);
             startActivity(editImageActivityIntent);
 
