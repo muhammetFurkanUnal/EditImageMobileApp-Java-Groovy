@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262626"
+    tools:context=".activities.EditActivity">
+
+    <!-- Selected image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/selectedImage"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/image"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornerImage" />
+
+    <!-- Scrollable buttons -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="200dp"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="@id/selectedImage"
+        app:layout_constraintStart_toStartOf="@id/selectedImage"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_btns"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_brightness"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_mod"
+                android:scaleType="centerInside"
+                app:chainUseRtl="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_zoom"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/brgt"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:onClick="btnBrightnessClicked"/>
+
+            <ImageButton
+                android:id="@+id/btn_zoom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:background="@drawable/btn_mod"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_crop"
+                app:layout_constraintStart_toEndOf="@id/btn_brightness"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/zoom"
+                android:onClick="btnZoomClicked" />
+
+            <ImageButton
+                android:id="@+id/btn_crop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_zoom"
+                app:layout_constraintEnd_toStartOf="@id/btn_cut"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/crop"
+                android:background="@drawable/btn_mod"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:onClick="btnCropClicked" />
+
+            <ImageButton
+                android:id="@+id/btn_cut"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_mod"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_crop"
+                app:layout_constraintEnd_toStartOf="@id/btn_edit"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/scissors"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:onClick="btnCutClicked" />
+
+            <ImageButton
+                android:id="@+id/btn_edit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_mod"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_cut"
+                app:layout_constraintEnd_toStartOf="@id/btn_effect"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/pen"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:onClick="btnEditClicked" />
+
+            <ImageButton
+                android:id="@+id/btn_effect"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/btn_mod"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/effect"
+                android:layout_marginEnd="@dimen/button_margin_end"
+                android:onClick="btnEffectClicked" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
