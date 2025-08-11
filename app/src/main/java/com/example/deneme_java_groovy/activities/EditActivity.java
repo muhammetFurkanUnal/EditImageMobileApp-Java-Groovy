@@ -38,7 +38,6 @@ public class EditActivity extends AppCompatActivity {
 
     }
 
-
     public void btnBrightnessClicked(View v) {
         System.out.println("Brightness button clicked!");
     }
